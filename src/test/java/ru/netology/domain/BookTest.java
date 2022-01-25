@@ -11,13 +11,14 @@ class BookTest {
         Book book = new Book();
 
     }
+
     @Test
     public void shouldUseEquals() {
-        Book book1 =new Book(2,"Java",100,"Syerra");
-        Book book2 =new Book(2,"Java",100,"Syerra");
+        Book book1 = new Book(2, "Java", 100, "Syerra");
+        Book book2 = new Book(2, "Java", 100, "Syerra");
 
 
-        assertEquals(book1,book2);
+        assertEquals(book1, book2);
 
     }
 

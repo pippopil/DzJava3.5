@@ -30,6 +30,7 @@ public class ProductManager {
         }
         return result;
     }
+
     public boolean matches(Product product, String search) {
         if (product instanceof Book) {
             Book book = (Book) product;

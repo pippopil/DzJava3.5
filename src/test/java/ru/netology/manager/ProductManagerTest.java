@@ -21,8 +21,6 @@ class ProductManagerTest {
     Product fifth = new Smartphone(5, "A70", 300, "Samsung");
 
 
-
-
     @BeforeEach
     public void setUp() {
         manager.add(first);
@@ -31,7 +29,6 @@ class ProductManagerTest {
         manager.add(fourth);
         manager.add(fifth);
     }
-
 
 
     @Test

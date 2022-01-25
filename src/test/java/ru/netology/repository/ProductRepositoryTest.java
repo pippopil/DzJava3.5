@@ -23,14 +23,15 @@ public class ProductRepositoryTest {
 
         assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldRemoveIfExists() {
         repository.save(first);
 
-        int idToRemove=1;
+        int idToRemove = 1;
         repository.removeById(idToRemove);
 
-        Product[] expected = new Product[] {};
+        Product[] expected = new Product[]{};
         Product[] actual = repository.getAll();
 
         assertArrayEquals(expected, actual);

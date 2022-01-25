@@ -2,7 +2,7 @@ package ru.netology.domain;
 
 import java.util.Objects;
 
-public class Smartphone extends Product{
+public class Smartphone extends Product {
     private String manufacturer;
 
     public Smartphone() {
