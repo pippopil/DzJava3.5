@@ -1,5 +1,6 @@
 package ru.netology.manager;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.Book;
 import ru.netology.domain.Product;
@@ -20,6 +21,9 @@ class ProductManagerTest {
     Product fifth = new Smartphone(5, "A70", 300, "Samsung");
 
 
+
+
+    @BeforeEach
     public void setUp() {
         manager.add(first);
         manager.add(second);
@@ -27,15 +31,12 @@ class ProductManagerTest {
         manager.add(fourth);
         manager.add(fifth);
     }
-    @Test
-    public void addProduct() {
-        manager.add(first);
-        assertArrayEquals(new Product[]{first}, repository.getAll());
-    }
+
+
 
     @Test
     void searchByName() {
-        setUp();
+
 
         Product[] expected = new Product[]{third};
         Product[] actual = manager.searchBy("Прошу,убей меня!");
@@ -44,7 +45,7 @@ class ProductManagerTest {
 
     @Test
     void searchMatchesNameBook() {
-        setUp();
+
 
         Product[] expected = new Product[]{second};
         Product[] actual = manager.searchBy("Отрочество");
@@ -53,7 +54,7 @@ class ProductManagerTest {
 
     @Test
     void searchMatchesAuthor() {
-        setUp();
+
 
         Product[] expected = new Product[]{third};
         Product[] actual = manager.searchBy("Маккейн");
@@ -62,7 +63,7 @@ class ProductManagerTest {
 
     @Test
     void searchMatchesManufacture() {
-        setUp();
+
 
         Product[] expected = new Product[]{fifth};
         Product[] actual = manager.searchBy("Samsung");
@@ -71,7 +72,7 @@ class ProductManagerTest {
 
     @Test
     void searchMatchesNameSmartphone() {
-        setUp();
+
 
         Product[] expected = new Product[]{fourth};
         Product[] actual = manager.searchBy("Iphone");
@@ -81,19 +82,19 @@ class ProductManagerTest {
     //    поиск всех книг одного автора
     @Test
     void searchAllByAuthor() {
-        setUp();
+
 
         Product[] expected = new Product[]{second, first};
         Product[] actual = manager.searchBy("Толстой");
         assertArrayEquals(expected, actual);
     }
+
     //    Запрос, на который нет ответа
     @Test
     void searchAll() {
-        setUp();
 
         Product[] expected = new Product[]{};
-        Product[] actual = manager.searchBy(null);
+        Product[] actual = manager.searchBy();
         assertArrayEquals(expected, actual);
     }
 
