@@ -18,6 +18,10 @@ public class ProductManager {
 
     }
 
+    public Product[] search(String пушкин) {
+        return new Product[0];
+    }
+
     public Product[] searchBy(String text) {
         Product[] result = new Product[0];
         for (Product product : repository.getAll()) {
@@ -43,10 +47,10 @@ public class ProductManager {
         }
         if (product instanceof Smartphone) {
             Smartphone smartphone = (Smartphone) product;
-            if (smartphone.getName().equalsIgnoreCase(search)) {
+            if (smartphone.getName().contains(search)) {
                 return true;
             }
-            if (smartphone.getManufacturer().equalsIgnoreCase(search)) {
+            if (smartphone.getManufacturer().contains(search)) {
                 return true;
             }
         }
@@ -54,7 +58,4 @@ public class ProductManager {
     }
 
 
-    public Product[] searchBy() {
-        return new Product[0];
-    }
 }

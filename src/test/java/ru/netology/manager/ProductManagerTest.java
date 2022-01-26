@@ -91,7 +91,7 @@ class ProductManagerTest {
     void searchAll() {
 
         Product[] expected = new Product[]{};
-        Product[] actual = manager.searchBy();
+        Product[] actual = manager.search("Пушкин");
         assertArrayEquals(expected, actual);
     }
 
