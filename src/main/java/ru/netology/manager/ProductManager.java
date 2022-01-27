@@ -18,10 +18,6 @@ public class ProductManager {
 
     }
 
-    public Product[] search(String пушкин) {
-        return new Product[0];
-    }
-
     public Product[] searchBy(String text) {
         Product[] result = new Product[0];
         for (Product product : repository.getAll()) {
