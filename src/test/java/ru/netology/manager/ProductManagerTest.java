@@ -32,11 +32,11 @@ class ProductManagerTest {
 
 
     @Test
-    void searchByName() {
+    void searchName() {
 
 
-        Product[] expected = new Product[]{third};
-        Product[] actual = manager.searchBy("Прошу,убей меня!");
+        Product[] expected = new Product[]{fourth};
+        Product[] actual = manager.searchBy("Apple");
         assertArrayEquals(expected, actual);
     }
 
@@ -91,7 +91,7 @@ class ProductManagerTest {
     void searchAll() {
 
         Product[] expected = new Product[]{};
-        Product[] actual = manager.search("Пушкин");
+        Product[] actual = manager.searchBy("Пушкин");
         assertArrayEquals(expected, actual);
     }
 
